@@ -1,2 +1,2 @@
 #!/bin/sh
-echo "HELLO WORLD"
+python main.py
