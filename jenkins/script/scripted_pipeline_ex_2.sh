@@ -1,16 +1,20 @@
-#!/bin/sh
+#!/bin/bash
+printf "This is BASH\n"
+printf "Please enter some text: "; read ans
+export ans
 
-COMMAND='nohup python3 -u ./main.py run >> py.log &'
-LOGFILE=restart.txt
+cat << EOF > main.py
+#!/usr/bin/python3 -tt
+import subprocess
 
-writelog() {
-  now=`date`
-  echo "$now $*" >> $LOGFILE
-}
+print('............This is Python')
+subprocess.call(["echo","............$ans"])
+print('............Done with Python')
 
-writelog "Starting"
-while true ; do
-  $COMMAND
-  writelog "Exited with status $?"
-  writelog "Restarting"
-done
+EOF
+
+chmod 770 pyscript.py
+
+./main.py
+
+printf "This is BASH again\n"
