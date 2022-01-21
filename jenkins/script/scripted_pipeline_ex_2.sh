@@ -1,2 +1,16 @@
 #!/bin/sh
-python ./jenkins/main.py
+
+COMMAND='nohup python3 -u main.py run >> py.log &'
+LOGFILE=restart.txt
+
+writelog() {
+  now=`date`
+  echo "$now $*" >> $LOGFILE
+}
+
+writelog "Starting"
+while true ; do
+  $COMMAND
+  writelog "Exited with status $?"
+  writelog "Restarting"
+done
