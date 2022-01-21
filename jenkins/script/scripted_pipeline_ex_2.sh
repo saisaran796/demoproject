@@ -1,5 +1,5 @@
 #!/bin/bash
-some_text="Hello world"
+some_text="Function to conversion of excel sheet into Data frame"
 echo $some_text
 
 cat <<EOF | python3 -
