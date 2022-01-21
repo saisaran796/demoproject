@@ -13,7 +13,7 @@ print('............Done with Python')
 
 EOF
 
-chmod 770 pyscript.py
+chmod 770 main.py
 
 ./main.py
 
