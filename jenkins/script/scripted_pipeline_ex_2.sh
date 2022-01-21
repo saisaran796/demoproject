@@ -2,7 +2,7 @@
 some_text="Hello world"
 echo $some_text
 
-cat <<EOF | python -
+cat <<EOF | python3 -
 # import pandas lib as pd
 import pandas as pd
  
