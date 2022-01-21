@@ -1,20 +1,13 @@
 #!/bin/bash
-printf "This is BASH\n"
-printf "Please enter some text: "; read ans
-export ans
+some_text="Hello world"
+echo $some_text
 
-cat << EOF > main.py
-#!/usr/bin/python3 -tt
-import subprocess
-
-print('............This is Python')
-subprocess.call(["echo","............$ans"])
-print('............Done with Python')
-
+cat <<EOF | python -
+# import pandas lib as pd
+import pandas as pd
+ 
+# read by default 1st sheet of an excel file
+dataframe1 = pd.read_excel('Individual_parameter_coverage.xlsx')
+ 
+print(dataframe1)
 EOF
-
-chmod 770 main.py
-
-./main.py
-
-printf "This is BASH again\n"
