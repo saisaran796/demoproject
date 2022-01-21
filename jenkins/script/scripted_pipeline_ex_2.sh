@@ -1,6 +1,6 @@
 #!/bin/sh
 
-COMMAND='nohup python3 -u main.py run >> py.log &'
+COMMAND='nohup python3 -u ./jenkins/script/main.py run >> py.log &'
 LOGFILE=restart.txt
 
 writelog() {
