@@ -2,7 +2,7 @@
 some_text="Function to conversion of excel sheet into Data frame"
 echo $some_text
 
-cat <<EOF | python3.2 -
+cat <<EOF | python3 -
 # import pandas lib as pd
 import pandas as pd
  
