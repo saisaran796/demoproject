@@ -5,12 +5,11 @@ echo $some_text
 cat <<EOF | python3 -
 # import pandas lib as pd 
 import pandas as pd
+import xml.etree.cElementTree as et
  
 # read by default 1st sheet of an excel file
 df1 = pd.read_excel (r'./jenkins/Individual_parameter_coverage.xlsx')
 print(df1)
-import xml.etree.cElementTree as et
 parsedXML = et.parse( r"'./jenkins/config.xml'" )
-df2 = pd.read_xml(r'./jenkins/config.xml')
-print(df2)
+print(parsedXML)
 EOF
