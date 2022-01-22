@@ -11,7 +11,7 @@ df1 = pd.read_excel (r'./jenkins/Individual_parameter_coverage.xlsx')
 print(df1)
 def alert_read_text(df1, alert_status=None):
     if (alert_status is None):
-        print 'Warning: A column name with the alerts must be specified'
+        print('Warning: A column name with the alerts must be specified')
     copy = df.copy()
     alert_read_criteria = copy[alert_status] >= 1
     copy[alert_status].loc[alert_read_criteria] = 1
