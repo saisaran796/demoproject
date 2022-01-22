@@ -10,6 +10,6 @@ import xml.etree.cElementTree as et
 # read by default 1st sheet of an excel file
 df1 = pd.read_excel (r'./jenkins/Individual_parameter_coverage.xlsx')
 print(df1)
-parsedXML = et.parse( r"'./jenkins/config.xml'" )
+parsedXML = et.parse( r'./jenkins/config.xml' )
 print(parsedXML)
 EOF
