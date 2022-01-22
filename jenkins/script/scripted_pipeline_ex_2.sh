@@ -13,13 +13,15 @@ df1 = pd.read_excel (r'./jenkins/Individual_parameter_coverage.xlsx')
 print(df1)
 xml_data = open(r'./jenkins/config.xml').read()  # Read file
 def xml2df(xml_data):
-tree = ET.parse(xml_data)
-root = tree.getroot()
-all_records = []
-for i, child in enumerate(root):
-record = {}
-for subchild in child:
-record[subchild.tag] = subchild.text
-all_records.append(record)
-return pd.DataFrame(all_records)
+#...
+for i, child in enumerate(root): #Begin looping through our root tree
+record = {} #Place holder for our record
+for subchild in child: #iterate through the subchildren to user-agent, Ex: ID, String, Description.
+record[subchild.tag] = subchild.text #Extract the text create a new dictionary key, value pair
+all_records.append(record) #Append this record to all_records.
+# Flatten all key, value pairs to one large dictionary
+all_records = {k: v for d in all_records for k, v in d.items()}
+# Convert to DataFrame, index=[0] is required when passing dictionary
+xml_df = pd.DataFrame(all_records, index=[0])
+return xml_df
 EOF
