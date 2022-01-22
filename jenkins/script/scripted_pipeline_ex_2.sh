@@ -15,7 +15,7 @@ xml_data = open(r'./jenkins/config.xml').read()  # Read file
 class XML2DataFrame:
 
     def __init__(self, xml_data):
-        self.root = ET.XML(xml_data)
+        self.root = et.XML(xml_data)
 
     def parse_root(self, root):
         """Return a list of dictionaries from the text and attributes of the
