@@ -9,7 +9,8 @@ import pandas as pd
 # read by default 1st sheet of an excel file
 df1 = pd.read_excel (r'./jenkins/Individual_parameter_coverage.xlsx')
 print(df1)
-import pandas_read_xml as pdx
+import xml.etree.cElementTree as et
+parsedXML = et.parse( r"'./jenkins/config.xml'" )
 df2 = pd.read_xml(r'./jenkins/config.xml')
 print(df2)
 EOF
