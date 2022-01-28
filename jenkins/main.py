@@ -153,8 +153,8 @@ def xl_writing(sheet_name, values):
 
 
 def send_email():
-    fromaddr = "kvedasai172@gmail.com"
-    toaddr = "kvedasai172@gmail.com"
+    fromaddr = "saisaran796@gmail.com"
+    toaddr = "saisaran796@gmail.com"
 
     msg = MIMEMultipart()
 
