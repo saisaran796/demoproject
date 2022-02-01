@@ -185,7 +185,7 @@ def send_email():
 
     s.starttls()
 
-    s.login(fromaddr, "Romanking@123")
+    s.login(fromaddr, "saran@123")
 
     text = msg.as_string()
 
