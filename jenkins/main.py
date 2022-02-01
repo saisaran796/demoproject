@@ -185,7 +185,7 @@ def send_email():
 
     s.starttls()
 
-    s.login(fromaddr, "VedaK172@")
+    s.login(fromaddr, "Romanking@123")
 
     text = msg.as_string()
 
@@ -198,11 +198,11 @@ if len(missing_parameter()) != 0:
     name = "Missing Parameters"
     result = missing_parameter()
     xl_writing(name, result)
-    # send_email()
+    send_email()
 else:
     name = "Coverage Results"
     result = coverage_results()
     xl_writing(name, result)
     if len(txt_extract()) > len(result):
         pass
-        # send_email()
+        send_email()
