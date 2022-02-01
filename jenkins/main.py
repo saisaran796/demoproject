@@ -168,7 +168,7 @@ def send_email():
 
     msg.attach(MIMEText(body, 'plain'))
 
-    filename = "Individual parameter coverage - Template.xlsx"
+    filename = "Result parameters.xlsx"
     attachment = open(r"./jenkins/Individual parameter coverage - Template.xlsx", "rb")
 
     p = MIMEBase('application', 'octet-stream')
