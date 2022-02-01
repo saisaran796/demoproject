@@ -168,8 +168,8 @@ def send_email():
 
     msg.attach(MIMEText(body, 'plain'))
 
-    filename = "Result parameters.xlsx"
-    attachment = open(r"./jenkins/Individual parameter coverage - Template.xlsx", "rb")
+    filename = "Result_Parameters.xlsx"
+    attachment = open(r"./jenkins/Result_Parameters.xlsx", "rb")
 
     p = MIMEBase('application', 'octet-stream')
 
